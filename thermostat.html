@@ -39,14 +39,20 @@
 
     $("#up").on('click', function() {
       thermostat.up();
+      getTemperature();
+      getEnergyUsage();
     });
 
     $("#down").on('click', function() {
       thermostat.down();
+      getTemperature();
+      getEnergyUsage();
     });
 
     $('#reset').on('click', function(){
       thermostat.resetTemp();
+      getTemperature();
+      getEnergyUsage();
     });
 
     $('#powersave').text(thermostat.powerSaveStatus());
@@ -54,11 +60,6 @@
     $('#powersaveswitch').on('click', function() {
       thermostat.powerSaveToggle();
       $('#powersave').text(thermostat.powerSaveStatus());
-    });
-
-    $(".tempchange").on('click', function() {
-      getTemperature();
-      getEnergyUsage();
     });
 
   });

@@ -29,11 +29,11 @@ Thermostat.prototype.up = function() {
 };
 
 Thermostat.prototype.powerSaveOn = function () {
-  return (this._isPowerSave === true && this.temperature === this.POWER_SAVE_ON_MAX);
+  return (this._isPowerSave === true && this.temperature >= this.POWER_SAVE_ON_MAX);
 };
 
 Thermostat.prototype.powerSaveOff = function () {
-  return (this._isPowerSave === false && this.temperature === this.POWER_SAVE_OFF_MAX);
+  return (this._isPowerSave === false && this.temperature >= this.POWER_SAVE_OFF_MAX);
 };
 
 Thermostat.prototype.down = function() {
